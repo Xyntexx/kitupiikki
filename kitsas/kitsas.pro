@@ -1,4 +1,5 @@
 # Kitsas (c) Arto Hyvättinen ja Kitsas Oy
+# Copyright (C) 2026 Xyntexx
 # GPL License
 #
 # Tässä tiedostossa on tarvittavien kirjastojen
