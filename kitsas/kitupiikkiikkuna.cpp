@@ -258,7 +258,7 @@ void KitupiikkiIkkuna::paivitaAktiivisuudet()
     } else {
         for(int i=KIRJAUSSIVU; i < MAARITYSSIVU; i++ )
             sivuaktiot[i]->setEnabled(false);
-        setWindowTitle(tr("Kitsas %1").arg(qApp->applicationVersion()));
+        setWindowTitle(tr("Kirjanpito-ohjelma %1").arg(qApp->applicationVersion()));
         sivuaktiot[LISAOSASIVU]->setVisible(false);
     }
 

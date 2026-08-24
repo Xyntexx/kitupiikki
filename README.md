@@ -1,20 +1,15 @@
-# Kitsas
-Ykkösversio julkaistu nimellä [Kitupiikki](https://kitupiikki.info)
+# Kirjanpito-ohjelma
 
-![Kitsas](https://raw.githubusercontent.com/artoh/kitupiikki/master/kitsas/pic/kitsas150.png)
+**Avoimen lähdekoodin kirjanpito-ohjelma pienille organisaatioille.**
 
-[![versio](https://img.shields.io/github/release/artoh/kitupiikki.svg?label=Julkaistu%20versio)](https://github.com/artoh/kitupiikki/releases)
-[![versio](https://img.shields.io/github/release/artoh/kitupiikki/all.svg?label=Esiversio)](https://github.com/artoh/kitupiikki/releases)
+Tämä on [Kitsas](https://github.com/artoh/kitupiikki)-ohjelmasta (alun perin julkaistu
+nimellä [Kitupiikki](https://kitupiikki.info)) muokattu, itsenäisesti ylläpidetty versio.
 
-**Finnish bookkeeping software for small organisations**
+> **Huomio:** Tämä on muokattu versio (muokattu 2026). **Kitsas Oy ei tarjoa mitään tukea tälle
+> ohjelmistolle** eikä vastaa sen toiminnasta. Kitsas Oy:hyn ei tule ottaa yhteyttä
+> tätä versiota koskevissa asioissa.
 
-Comments, variable names, documentations and the software itself are, of course, in Finnish only!
-
-**Suomalainen avoimen lähdekoodin kirjanpito-ohjelma**
-
-Kotisivu [kitsas.fi](https://kitsas.fi)   
-Käyttöohjeet [kitsas.fi/docs](https://kitsas.fi/docs)
-
+Comments, variable names, documentation and the software itself are, of course, in Finnish only!
 
 ## Tavoitteet
 
@@ -22,12 +17,15 @@ Käyttöohjeet [kitsas.fi/docs](https://kitsas.fi/docs)
 - tositteiden sähköinen käsittely pdf-muodossa
 - sähköisen arkiston muodostaminen
 - sisäänrakennettu laskutus
-- muodostaan tuloslaskelman, taseen, tase-erittelyn
+- muodostaa tuloslaskelman, taseen, tase-erittelyn
 
-Kirjanpito on mahdollista tallentaa joko omalle tietokoneelle SQLite-muodossa, tai käyttää Kitsas Oy:n palvelinta (maksullinen palvelu), jolloin käytettävissä on myös suuri joukko lisätoimintoja.
+Kirjanpito tallennetaan omalle tietokoneelle SQLite-muodossa. Kitsas Oy:n
+pilvipalvelu ei ole osa tätä versiota.
 
 ## Vaatimukset
-Kitsas käyttää [Qt-kirjastoa](https://qt.io) versio vähintään 6.4 (Kaikki ominaisuudet 6.8). Käytössä on mm. QtWidgets, QtPdf ja QtWebEngine -moduulit.
+
+Ohjelma käyttää [Qt-kirjastoa](https://qt.io) versio vähintään 6.4 (kaikki ominaisuudet 6.8).
+Käytössä on mm. QtWidgets-, QtPdf- ja QtWebEngine-moduulit.
 
 Zip-tiedostojen käsittelyyn käytetään [libzip](https://libzip.org)-kirjastoa.
 
@@ -43,22 +41,30 @@ ja libzip
 
 ## Kääntäminen
 
-Kitsas käyttää QMakea. Kääntäminen on helpointa tehdä [QtCreatorin](http://doc.qt.io/qtcreator/) ympäristössä. Komentorivillä kääntyy komennoilla
+Käytössä on QMake. Kääntäminen on helpointa tehdä [QtCreatorin](http://doc.qt.io/qtcreator/)
+ympäristössä. Komentorivillä kääntyy komennoilla
 
-    qmake kitupiikki.pro && make qmake_all
+    qmake kitsasproject.pro && make qmake_all
     make
 
+## Alkuperäinen ohjelmisto
 
-## Ylläpitäjä
+Tämä ohjelma perustuu Kitsas-ohjelmaan.
 
-Arto Hyvättinen <arto@kitsas.fi>
+- Alkuperäinen tekijä: Arto Hyvättinen ja Kitsas Oy
+- Alkuperäinen kotisivu: [kitsas.fi](https://kitsas.fi)
+- Käyttöohjeet (soveltuvin osin): [kitsas.fi/docs](https://kitsas.fi/docs)
+
+## Ylläpito
+
+DevTerra – [github.com/Xyntexx/kitupiikki](https://github.com/Xyntexx/kitupiikki)
 
 ## Lisenssi
 
-GNU General Public License 3 - katso [LICENSE](https://raw.githubusercontent.com/artoh/kitupiikki/master/LICENSE) seuraavilla lisenssin mukaisilla lisäehdoilla:
+GNU General Public License 3 – katso [LICENSE](LICENSE) seuraavilla lisenssin mukaisilla lisäehdoilla:
 
 Jaettaessa muokatuksi ohjelmisto on
 
--  ohjelmisto merkittävä selkeästi muutetuksi
--  esitettävä selkeästi, ettei Kitsas Oy tarjoa mitään tukea muokatulle ohjelmistolle
-- vältettävä käytettämästä Kitsas Oy:n nimeä muokatun ohjelmiston yhteydessä
+- merkittävä selkeästi muutetuksi
+- esitettävä selkeästi, ettei Kitsas Oy tarjoa mitään tukea muokatulle ohjelmistolle
+- vältettävä käyttämästä Kitsas Oy:n nimeä muokatun ohjelmiston yhteydessä

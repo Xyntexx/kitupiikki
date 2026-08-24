@@ -28,27 +28,9 @@ QDate PaivitysInfo::buildDate()
 
 void PaivitysInfo::pyydaInfo()
 {
-    QVariantMap tilasto;
-    if( kp()->settings()->contains("TilastoPaivitetty")) {
-        tilasto.insert("lastasked", kp()->settings()->value("TilastoPaivitetty").toDate());
-    }
-    tilasto.insert("application", qApp->applicationName());
-    tilasto.insert("version", qApp->applicationVersion());
-    tilasto.insert("build", KITSAS_BUILD);
-    tilasto.insert("os", QSysInfo::prettyProductName());
-    tilasto.insert("language", Kielet::instanssi()->uiKieli());
-    tilasto.insert("builddate", buildDate().toString(Qt::ISODate));
-
-    QByteArray ba = QJsonDocument::fromVariant(tilasto).toJson();
-    QString osoite = kp()->pilvi()->pilviLoginOsoite() + "/updateinfo";
-
-    QNetworkRequest pyynto = QNetworkRequest( QUrl(osoite));
-    pyynto.setSslConfiguration(QSslConfiguration::defaultConfiguration());
-    pyynto.setRawHeader("Content-type","application/json");
-    pyynto.setRawHeader("User-Agent", QString("%1 %2 %3").arg(qApp->applicationName(),qApp->applicationVersion(), QSysInfo::prettyProductName()).toUtf8()  );
-    QNetworkReply *reply = kp()->networkManager()->post(pyynto, ba);
-    connect( reply, &QNetworkReply::finished, this, &PaivitysInfo::infoSaapui);
-
+    // Tama muokattu versio ei laheta kayttotilastoja eika tee paivitystarkistusta
+    // Kitsas Oy:n palvelimelle. Ilmoitetaan vain aloitussivulle, etta info on "saapunut".
+    emit infoSaapunut();
 }
 
 void PaivitysInfo::infoSaapui()

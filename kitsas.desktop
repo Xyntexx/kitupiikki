@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Name=Kitsas
+Name=Kirjanpito-ohjelma
 Exec=kitsas %F
 Icon=kitsas
 Comment=Avoimen lähdekoodin kirjanpitäjä
