@@ -1,5 +1,6 @@
 /*
    Copyright (C) 2018 Arto Hyvättinen
+   Copyright (C) 2026 Xyntexx
 
    This program is free software: you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -48,7 +49,11 @@ QWidget *TuontiSarakeDelegaatti::createEditor(QWidget *parent, const QStyleOptio
 
     comboon(combo, CsvTuonti::EITUODA);
 
-   if( !tuokirjauksia_ && ( tyyppi == CsvTuonti::VIITE || nykyinen == CsvTuonti::VIITE)) {
+   if( !tuokirjauksia_ && ( tyyppi == CsvTuonti::VIITE ||
+                            tyyppi == CsvTuonti::RAHA ||
+                            tyyppi == CsvTuonti::LUKU ||
+                            tyyppi == CsvTuonti::ALLESATA ||
+                            nykyinen == CsvTuonti::VIITENRO)) {
         comboon(combo, CsvTuonti::VIITENRO);
     }
 

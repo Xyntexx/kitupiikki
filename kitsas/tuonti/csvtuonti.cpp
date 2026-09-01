@@ -1,5 +1,6 @@
 /*
    Copyright (C) 2018 Arto Hyvättinen
+   Copyright (C) 2026 Xyntexx
 
    This program is free software: you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -785,6 +786,8 @@ int CsvTuonti::tuoListaan(const QByteArray &data)
                 else if( muodot_[i]==RAHA && ( muoto==LUKU || muoto == ALLESATA || muoto==VIITE))
                     muodot_[i] = RAHA;
                 else if( (muodot_[i] == LUKU && muoto == VIITE ) || (muodot_[i] == VIITE && muoto == LUKU) )
+                    muodot_[i] = LUKU;
+                else if( muodot_[i] == LUKU && muoto == ALLESATA)
                     muodot_[i] = LUKU;
                 else
                     muodot_[i] = TEKSTI;
